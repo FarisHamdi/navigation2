@@ -129,14 +129,14 @@ protected:
 
   // Network interfaces
   std::unique_ptr<nav2_util::OdomSmoother> odom_smoother_;
-  rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr
+  rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::TwistStamped>::SharedPtr
     smoothed_cmd_pub_;
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
 
   rclcpp::Clock::SharedPtr clock_;
-  geometry_msgs::msg::Twist last_cmd_;
-  geometry_msgs::msg::Twist::SharedPtr command_;
+  geometry_msgs::msg::TwistStamped last_cmd_;
+  geometry_msgs::msg::TwistStamped::SharedPtr command_;
 
   // Parameters
   double smoothing_frequency_;
